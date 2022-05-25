@@ -377,7 +377,7 @@ var asyncWorker = (function () {
       let promises = Promise.allSettled(asyncWorkerObj[uuid].promises);
       return new Promise(function (resolve, reject) {
         setTimeout(() => {
-          console.log(promises);
+          console.log("[asyncWorker.getStatus]", promises);
           Promise.race([promises, t]).then(
             (v) => {
               resolve(v === t ? "pending" : "fulfilled");
@@ -423,7 +423,7 @@ var asyncWorker = (function () {
 
       return new Promise(function (resolve, reject) {
         setTimeout(() => {
-          console.log(promises);
+          console.log("[asyncWorker.getStatus]", promises);
           Promise.allSettled(detailePromises).then(() =>
             Promise.race([promises, t]).then(
               (v) => {
