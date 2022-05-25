@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>비동기 처리 데모</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../dist/async.min.js"></script>
+    <script>
+      var workerId = asyncWorker.create();
+      function onclickFunc() {
+        logMsg("팝업 오픈");
+        var promise1Id = asyncWorker.addPromise(workerId);
+        window.open("popup.html", "", "width=200,height=100");
+      }
+
+      function popupCallback(msg) {
+        var promiseUuid = asyncWorker.resolve(workerId, msg);
+        logMsg("팝업 콜백:" + promiseUuid + ", " + msg);
+      }
+
+      async function checkStatus() {
+        logMsg("팝업 완료 체크: " + (await asyncWorker.getStatus(workerId)));
+      }
+
+      async function checkDetailedStatus() {
+        logMsg("팝업 완료 체크: " + JSON.stringify(await asyncWorker.getDetailedStatus(workerId), null, 2));
+      }
+
+      async function isAllResolved() {
+        var data = await asyncWorker.join(workerId);
+        logMsg("모든 팝업의 콜백이 실행됨: " + data);
+      }
+
+      function logMsg(msg) {
+        var date = new Date();
+        var dateStr = date.getFullYear() + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + date.getDate()).slice(-2) + " " + ("0" + date.getHours()).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2) + ":" + ("0" + date.getSeconds()).slice(-2);
+
+        document.getElementById("result").innerHTML = "[" + dateStr + "] " + msg + "<br>" + document.getElementById("result").innerHTML;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>비동기 처리 데모</h1>
+    <input type="button" value="팝업 실행" onclick="onclickFunc()" />
+    <input type="button" value="상태 확인" onclick="checkStatus()" />
+    <input type="button" value="상태 확인(상세)" onclick="checkDetailedStatus()" />
+    <input type="button" value="팝업 완료 체크" onclick="isAllResolved()" />
+    <div id="result" style="background-color: gray; font-size: 10pt"></div>
+    <xmp
+>
+
+// api style1
+
+var workerId = asyncWorker.create();
+
+var uuid2 = asyncWorker.addPromise(workerId, function (data) {
+  console.log("promise1 end");
+  return data;
+});
+
+var uuid3 = asyncWorker.addPromise(workerId, function (data) {
+  console.log("promise2 end");
+  return data;
+});
+var uuid4 = asyncWorker.addPromise(workerId, function (data) {
+  console.log("promise3 end");
+  return data;
+});
+
+asyncWorker.join(workerId).then(function (data) {
+  console.log("joined", data);
+});
+
+window.setTimeout(function () {
+  asyncWorker.resolve(workerId, "data1");
+}, 1000);
+
+window.setTimeout(function () {
+  asyncWorker.resolve({ uuid: workerId, promiseUuid: uuid3 }, "data2");
+}, 500);
+
+window.setTimeout(function () {
+  asyncWorker.resolve(workerId, "data3");
+}, 2000);
+
+    </xmp>
+  </body>
+</html>
