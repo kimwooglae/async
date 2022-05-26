@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="utf-8">
-    <title>JSDoc: Namespace: asyncWorker</title>
-
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
+    <title>asyncWorker - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
 
-<div id="main">
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
 
-    <h1 class="page-title">Namespace: asyncWorker</h1>
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="asyncWorker.html">asyncWorker</a><ul class='methods'><li data-type='method' style='display: none;'><a href="asyncWorker.html#.addPromise">addPromise</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.addSerialPromise">addSerialPromise</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.create">create</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.getDetailedStatus">getDetailedStatus</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.getPromise">getPromise</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.getPromiseId">getPromiseId</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.getStatus">getStatus</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.getWorkerId">getWorkerId</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.join">join</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.reject">reject</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.rejectAll">rejectAll</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.resolve">resolve</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.resolveAll">resolveAll</a></li><li data-type='method' style='display: none;'><a href="asyncWorker.html#.stop">stop</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">asyncWorker</h1>
+    
 
     
 
@@ -28,24 +46,27 @@
 
 <header>
     
-        <h2>asyncWorker</h2>
+        <h2>
+        asyncWorker
+        </h2>
         
     
 </header>
 
 <article>
-    <div class="container-overview">
     
+        <div class="container-overview">
         
-            <div class="description">asyncWorker 객체는 전역에 생성되어 동작하며 asyncWorker.create() 메소드를 이용하여 초기화된다. 
-  create() 메소드는 worker에 접근할 때 사용되는 uuid를 반환한다. uuid를 이용하면 서로 다른 함수에서 worker에 접근할 수 있다. 
-  모든 작업이 완료되면 destroy()를 이용하여 worker를 제거할 수 있다.</div>
-        
-
-        
-
+            
 
 <dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
 
     
 
@@ -79,13 +100,6 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line1">line 1</a>
-    </li></ul></dd>
-    
-
-    
 
     
 
@@ -93,10 +107,17 @@
 </dl>
 
 
+
+
+            
+                <div class="description usertext"><p>asyncWorker 객체는 전역에 생성되어 동작하며 asyncWorker.create() 메소드를 이용하여 초기화된다.
+create() 메소드는 worker에 접근할 때 사용되는 uuid를 반환한다. uuid를 이용하면 서로 다른 함수에서 worker에 접근할 수 있다.
+모든 작업이 완료되면 destroy()를 이용하여 worker를 제거할 수 있다.</p></div>
+            
+
+            
         
-    
-    </div>
-
+        </div>
     
 
     
@@ -104,8 +125,10 @@
     
 
     
-
     
+    
+
+     
 
     
 
@@ -119,24 +142,97 @@
 
     
 
-    
     <h4 class="name" id=".addPromise"><span class="type-signature">(static) </span>addPromise<span class="signature">(uuid, callback)</span><span class="type-signature"> &rarr; {String}</span></h4>
-    
 
     
 
 
 
-<div class="description">
-    worker 내부에 promise를 생성하고 promiseUuid를 반환한다.
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line91">line 91</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Inswave Systems</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>worker 내부에 promise를 생성하고 promiseUuid를 반환한다.
 첫번째 인자가 문자열인 경우 worker에 접근하기 위한 uuid로 사용하고 다른 Promise와 Promise chain으로 연결하지 않는다.
-첫번째 인자가 객체인 경우 uuid 속성을 worker에 접근하기 위한 uuid로 사용하고 chainUuid 속성에 지정된 promiseUuid로 저장된 Promise들과 Promise chain으로 연결한다.
+첫번째 인자가 객체인 경우 uuid 속성을 worker에 접근하기 위한 uuid로 사용하고 chainUuid 속성에 지정된 promiseUuid로 저장된 Promise들과 Promise chain으로 연결한다.</p>
 </div>
 
 
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var workerId = asyncWorker.addPromise("49a16e73-6f72-48e2-935a-5c7129fdf8af");
+ var workerId = asyncWorker.addPromise("49a16e73-6f72-48e2-935a-5c7129fdf8af", () => {
+   console.log("callback");
+ });
+ var workerId = asyncWorker.addPromise({
+   uuid: "49a16e73-6f72-48e2-935a-5c7129fdf8af",
+   chainUuid: ["e77c9414-a26b-4005-ac41-ea198ecce29b", "a9a91d67-1485-4291-b7c6-72bbdc093b63"],
+ });
+ var workerId = asyncWorker.addPromise(
+   {
+     uuid: "49a16e73-6f72-48e2-935a-5c7129fdf8af",
+     chainUuid: ["e77c9414-a26b-4005-ac41-ea198ecce29b", "a9a91d67-1485-4291-b7c6-72bbdc093b63"],
+   },
+   () => {
+     console.log("callback");
+   }
+ );</code></pre>
 
 
 
@@ -185,7 +281,7 @@
 
             
 
-            <td class="description last">worker에 접근하기 위한 uuid 또는 uuid와 chainUuid를 가진 객체
+            <td class="description last"><p>worker에 접근하기 위한 uuid 또는 uuid와 chainUuid를 가진 객체</p>
                 <h6>Properties</h6>
                 
 
@@ -227,7 +323,7 @@
 
             
 
-            <td class="description last">worker에 접근하기 위한 uuid</td>
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
         </tr>
 
     
@@ -250,7 +346,7 @@
 
             
 
-            <td class="description last">Promise chain에 연결할 promiseUuid 배열</td>
+            <td class="description last"><p>Promise chain에 연결할 promiseUuid 배열</p></td>
         </tr>
 
     
@@ -280,64 +376,13 @@
 
             
 
-            <td class="description last">Promise가 resolve된 경우 then() 함수의 인자로 전달될 callback 함수</td>
+            <td class="description last"><p>Promise가 resolve된 경우 then() 함수의 인자로 전달될 callback 함수</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Inswave Systems</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line78">line 78</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
 
@@ -357,12 +402,12 @@
 
         
 <div class="param-desc">
-    uuid
+    <p>uuid</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -378,151 +423,19 @@
 
 
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var workerId = asyncWorker.addPromise('49a16e73-6f72-48e2-935a-5c7129fdf8af');
-var workerId = asyncWorker.addPromise('49a16e73-6f72-48e2-935a-5c7129fdf8af', () => {console.log('callback')});
-var workerId = asyncWorker.addPromise({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af', chainUuid: ['e77c9414-a26b-4005-ac41-ea198ecce29b', 'a9a91d67-1485-4291-b7c6-72bbdc093b63']});
-var workerId = asyncWorker.addPromise({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af', chainUuid: ['e77c9414-a26b-4005-ac41-ea198ecce29b', 'a9a91d67-1485-4291-b7c6-72bbdc093b63']}, () => {console.log('callback')});</code></pre>
-
-
-
         
             
 
     
 
-    
     <h4 class="name" id=".addSerialPromise"><span class="type-signature">(static) </span>addSerialPromise<span class="signature">(uuid, callback)</span><span class="type-signature"> &rarr; {String}</span></h4>
-    
 
     
-
-
-
-<div class="description">
-    worker 내부에 Promise를 생성하고 가장 마지막에 생성된 Promise와 Promise chain으로 연결한다.
-구체적인 동작은 다음과 같다.
- Promise.allSettled([마지막 생성된 Promise 객체]).then(() => promise)
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>uuid</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">worker에 접근하기 위한 uuid</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Promise가 resolve된 경우 then() 함수의 인자로 전달될 callback 함수</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
 
 
 
 
 <dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Inswave Systems</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
 
     
     <dt class="tag-source">Source:</dt>
@@ -536,90 +449,6 @@ var workerId = asyncWorker.addPromise({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8
     
 
     
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    promiseUuid
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">String</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var promiseId = asyncWorker.addSerialPromise('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code></pre>
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id=".create"><span class="type-signature">(static) </span>create<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    worker를 생성하고 worker접근에 필요한 uuid를 반환한다.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
 
     
 
@@ -647,13 +476,6 @@ var workerId = asyncWorker.addPromise({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line27">line 27</a>
-    </li></ul></dd>
-    
-
-    
 
     
 
@@ -664,69 +486,23 @@ var workerId = asyncWorker.addPromise({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8
 
 
 
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    uuid
+<div class="description usertext">
+    <p>worker 내부에 Promise를 생성하고 가장 마지막에 생성된 Promise와 Promise chain으로 연결한다.
+구체적인 동작은 다음과 같다.
+Promise.allSettled([마지막 생성된 Promise 객체]).then(() =&gt; promise)</p>
 </div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">String</span>
 
 
-    </dd>
-</dl>
-
-    
 
 
 
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var workerId = asyncWorker.create();</code></pre>
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id=".destroy"><span class="type-signature">(static) </span>destroy<span class="signature">(uuid)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    worker 내부의 모든 Promise를 resolve한 후 worker를 삭제한다.
-</div>
-
-
-
-
-
+    <pre class="prettyprint"><code>var promiseId = asyncWorker.addSerialPromise('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code></pre>
 
 
 
@@ -772,7 +548,30 @@ var workerId = asyncWorker.addPromise({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8
 
             
 
-            <td class="description last">worker에 접근하기 위한 uuid</td>
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Promise가 resolve된 경우 then() 함수의 인자로 전달될 callback 함수</p></td>
         </tr>
 
     
@@ -784,7 +583,61 @@ var workerId = asyncWorker.addPromise({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8
 
 
 
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>promiseUuid</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".create"><span class="type-signature">(static) </span>create<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+
 <dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
 
     
 
@@ -818,10 +671,124 @@ var workerId = asyncWorker.addPromise({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8
     
 
     
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>worker를 생성하고 worker접근에 필요한 uuid를 반환한다.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var workerId = asyncWorker.create();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>uuid</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".destroy"><span class="type-signature">(static) </span>destroy<span class="signature">(uuid)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line354">line 354</a>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line397">line 397</a>
     </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Inswave Systems</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
     
 
     
@@ -835,11 +802,9 @@ var workerId = asyncWorker.addPromise({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8
 
 
 
-
-
-
-
-
+<div class="description usertext">
+    <p>worker 내부의 모든 Promise를 resolve한 후 worker를 삭제한다.</p>
+</div>
 
 
 
@@ -855,33 +820,6 @@ var workerId = asyncWorker.addPromise({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8
 
 
 
-        
-            
-
-    
-
-    
-    <h4 class="name" id=".getDetailedStatus"><span class="type-signature">(static) </span>getDetailedStatus<span class="signature">(uuid)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    worker 내부의 모든 Promise의 상세한 상태를 반환하는 Promise를 return한다.
-Promise는 객체를 반환하는데 status 속성은 일부 Promise가 pending이면 pending으로 설정된다.
-detail 속성은 promiseUuid를 key로 하는 상태 정보 객체가 포함된다.
-예시 : { "status": "pending" , "detail": { "1cbf6ad9-fd10-4e8f-b57e-41977ed79b3d": "fulfilled", "4be4d3d4-533b-45c6-b971-72778f6422b2": "pending" }}
-</div>
-
-
-
-
-
-
-
-
 
     <h5>Parameters:</h5>
     
@@ -924,7 +862,7 @@ detail 속성은 promiseUuid를 key로 하는 상태 정보 객체가 포함된�
 
             
 
-            <td class="description last">worker에 접근하기 위한 uuid</td>
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
         </tr>
 
     
@@ -936,7 +874,39 @@ detail 속성은 promiseUuid를 key로 하는 상태 정보 객체가 포함된�
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getDetailedStatus"><span class="type-signature">(static) </span>getDetailedStatus<span class="signature">(uuid)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+
+    
+
+
+
+
 <dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line456">line 456</a>
+    </li></ul></dd>
+    
 
     
 
@@ -970,13 +940,6 @@ detail 속성은 promiseUuid를 key로 하는 상태 정보 객체가 포함된�
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line409">line 409</a>
-    </li></ul></dd>
-    
-
-    
 
     
 
@@ -987,70 +950,27 @@ detail 속성은 promiseUuid를 key로 하는 상태 정보 객체가 포함된�
 
 
 
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    worker의 상태를 반환하는 Promise로 status, detail 속성을 가지며 각 속성은 pending, fulfilled, rejected 중 한가지 값을 가진다.
+<div class="description usertext">
+    <p>worker 내부의 모든 Promise의 상세한 상태를 반환하는 Promise를 return한다.
+Promise는 객체를 반환하는데 status 속성은 일부 Promise가 pending이면 pending으로 설정된다.
+detail 속성은 promiseUuid를 key로 하는 상태 정보 객체가 포함된다.
+예시 : { &quot;status&quot;: &quot;pending&quot; , &quot;detail&quot;: { &quot;1cbf6ad9-fd10-4e8f-b57e-41977ed79b3d&quot;: &quot;fulfilled&quot;, &quot;4be4d3d4-533b-45c6-b971-72778f6422b2&quot;: &quot;pending&quot; }}</p>
 </div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise</span>
 
 
-    </dd>
-</dl>
-
-    
 
 
 
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var promose = asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af').then((data) => { console.log(data); });
+    <pre class="prettyprint"><code>var promose = asyncWorker.getDetailedStatus("49a16e73-6f72-48e2-935a-5c7129fdf8af").then((data) => {
+  console.log(data);
+});
 var status = await asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code></pre>
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id=".getPromise"><span class="type-signature">(static) </span>getPromise<span class="signature">(uuid, promiseUuid)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    worker 내부에 Promise를 반환한다.
-</div>
-
-
-
-
-
 
 
 
@@ -1096,7 +1016,177 @@ var status = await asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129
 
             
 
-            <td class="description last">worker에 접근하기 위한 uuid</td>
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>worker의 상태를 반환하는 Promise로 status, detail 속성을 가지며 각 속성은 pending, fulfilled, rejected 중 한가지 값을 가진다.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getPromise"><span class="type-signature">(static) </span>getPromise<span class="signature">(uuid, promiseUuid)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line143">line 143</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Inswave Systems</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>worker 내부에 Promise를 반환한다.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var workerId = asyncWorker.getPromise('49a16e73-6f72-48e2-935a-5c7129fdf8af', 'e77c9414-a26b-4005-ac41-ea198ecce29b');</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>uuid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
         </tr>
 
     
@@ -1119,64 +1209,13 @@ var status = await asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129
 
             
 
-            <td class="description last">Promise를 반환할 promiseUuid</td>
+            <td class="description last"><p>Promise를 반환할 promiseUuid</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Inswave Systems</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line130">line 130</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
 
@@ -1196,12 +1235,12 @@ var status = await asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129
 
         
 <div class="param-desc">
-    Promise 객체
+    <p>Promise 객체</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -1217,92 +1256,26 @@ var status = await asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129
 
 
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var workerId = asyncWorker.getPromise('49a16e73-6f72-48e2-935a-5c7129fdf8af', 'e77c9414-a26b-4005-ac41-ea198ecce29b');</code></pre>
-
-
-
         
             
 
     
 
-    
     <h4 class="name" id=".getPromiseId"><span class="type-signature">(static) </span>getPromiseId<span class="signature">(uuid)</span><span class="type-signature"> &rarr; {Array}</span></h4>
-    
 
     
-
-
-
-<div class="description">
-    Promise uuid 목록이 포함된 배열을 반환한다.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>uuid</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">worker에 접근하기 위한 uuid</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
 
 
 
 
 <dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line516">line 516</a>
+    </li></ul></dd>
+    
 
     
 
@@ -1336,13 +1309,6 @@ var status = await asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line469">line 469</a>
-    </li></ul></dd>
-    
-
-    
 
     
 
@@ -1353,38 +1319,14 @@ var status = await asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129
 
 
 
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    모든 Promise의 uuid가 포함된 array
+<div class="description usertext">
+    <p>Promise uuid 목록이 포함된 배열을 반환한다.</p>
 </div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array</span>
 
 
-    </dd>
-</dl>
-
-    
 
 
 
@@ -1395,30 +1337,6 @@ var status = await asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129
 
 
 
-        
-            
-
-    
-
-    
-    <h4 class="name" id=".getStatus"><span class="type-signature">(static) </span>getStatus<span class="signature">(uuid)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    worker 내부의 모든 Promise의 상태를 반환하는 Promise를 return한다. 일부 Promise가 pending이면 pending으로 반환한다.
-</div>
-
-
-
-
-
-
-
-
 
     <h5>Parameters:</h5>
     
@@ -1461,7 +1379,7 @@ var status = await asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129
 
             
 
-            <td class="description last">worker에 접근하기 위한 uuid</td>
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
         </tr>
 
     
@@ -1473,57 +1391,6 @@ var status = await asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Inswave Systems</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line374">line 374</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
 
 
 
@@ -1538,135 +1405,12 @@ var status = await asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129
 
         
 <div class="param-desc">
-    worker의 상태를 반환하는 Promise로 pending, fulfilled, rejected 중 한가지 값을 반환한다.
+    <p>모든 Promise의 uuid가 포함된 array</p>
 </div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var promose = asyncWorker.getStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af').then((data) => { console.log(data); });
-var status = await asyncWorker.getStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code></pre>
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id=".getWorkerId"><span class="type-signature">(static) </span>getWorkerId<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    worker uuid 목록이 포함된 배열을 반환한다.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Inswave Systems</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line455">line 455</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    모든 worker의 uuid가 포함된 array
-</div>
-
-
-
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -1682,34 +1426,87 @@ var status = await asyncWorker.getStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af')
 
 
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var uuids = asyncWorker.getWorkerId();</code></pre>
-
-
-
         
             
 
     
 
-    
-    <h4 class="name" id=".join"><span class="type-signature">(static) </span>join<span class="signature">(uuid)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-    
+    <h4 class="name" id=".getStatus"><span class="type-signature">(static) </span>getStatus<span class="signature">(uuid)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
 
 
-<div class="description">
-    worker 내부의 모든 Promise가 settle(resolve 또는 reject)된 후 settle되는 promise를 반환한다.
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line419">line 419</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Inswave Systems</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>worker 내부의 모든 Promise의 상태를 반환하는 Promise를 return한다. 일부 Promise가 pending이면 pending으로 반환한다.</p>
 </div>
 
 
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var promose = asyncWorker.getStatus("49a16e73-6f72-48e2-935a-5c7129fdf8af").then((data) => {
+  console.log(data);
+});
+var status = await asyncWorker.getStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code></pre>
 
 
 
@@ -1755,7 +1552,7 @@ var status = await asyncWorker.getStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af')
 
             
 
-            <td class="description last">worker에 접근하기 위한 uuid</td>
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
         </tr>
 
     
@@ -1767,7 +1564,61 @@ var status = await asyncWorker.getStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af')
 
 
 
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>worker의 상태를 반환하는 Promise로 pending, fulfilled, rejected 중 한가지 값을 반환한다.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getWorkerId"><span class="type-signature">(static) </span>getWorkerId<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+    
+
+
+
+
 <dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line502">line 502</a>
+    </li></ul></dd>
+    
 
     
 
@@ -1801,18 +1652,34 @@ var status = await asyncWorker.getStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af')
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line309">line 309</a>
-    </li></ul></dd>
-    
-
-    
 
     
 
     
 </dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>worker uuid 목록이 포함된 배열을 반환한다.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var uuids = asyncWorker.getWorkerId();</code></pre>
+
+
+
 
 
 
@@ -1832,12 +1699,187 @@ var status = await asyncWorker.getStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af')
 
         
 <div class="param-desc">
-    settle되는 Promise로 worker 내부의 Promise의 resolve 값 또는 reject 사유가 포함된 배열을 반환한다.
+    <p>모든 worker의 uuid가 포함된 array</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".join"><span class="type-signature">(static) </span>join<span class="signature">(uuid)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line348">line 348</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Inswave Systems</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>worker 내부의 모든 Promise가 settle(resolve 또는 reject)된 후 settle되는 promise를 반환한다.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var promose = asyncWorker.join("49a16e73-6f72-48e2-935a-5c7129fdf8af").then((data) => {
+  data.forEach((item) => {
+    console.log(item);
+  });
+});
+var data = await asyncWorker.join('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>uuid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>settle되는 Promise로 worker 내부의 Promise의 resolve 값 또는 reject 사유가 포함된 배열을 반환한다.</p>
+</div>
+
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -1853,37 +1895,98 @@ var status = await asyncWorker.getStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af')
 
 
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var promose = asyncWorker.join('49a16e73-6f72-48e2-935a-5c7129fdf8af').then((data) => { data.forEach((item) => { console.log(item); }); });
-var data = await asyncWorker.join('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code></pre>
-
-
-
         
             
 
     
 
-    
     <h4 class="name" id=".reject"><span class="type-signature">(static) </span>reject<span class="signature">(uuid, data)</span><span class="type-signature"> &rarr; {String}</span></h4>
-    
 
     
 
 
 
-<div class="description">
-    worker 내부의 Promise를 reject한다.
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line240">line 240</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Inswave Systems</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>worker 내부의 Promise를 reject한다.
 첫번째 인자가 문자열인 경우 worker에 접근하기 위한 uuid로 사용하고 해당 worker의 마지막 생성된 Promise를 reject한다.
-첫번째 인자가 객체인 경우 uuid 속성을 worker에 접근하기 위한 uuid로 사용하고 promiseUuid 속성에 지정된 promiseUuid로 저장된 Promise를 reject한다.
+첫번째 인자가 객체인 경우 uuid 속성을 worker에 접근하기 위한 uuid로 사용하고 promiseUuid 속성에 지정된 promiseUuid로 저장된 Promise를 reject한다.</p>
 </div>
 
 
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var workerId = asyncWorker.reject('49a16e73-6f72-48e2-935a-5c7129fdf8af');
+var workerId = asyncWorker.reject('49a16e73-6f72-48e2-935a-5c7129fdf8af', 'resolveData');
+var workerId = asyncWorker.reject({
+  uuid: "49a16e73-6f72-48e2-935a-5c7129fdf8af",
+  promiseUuid: "e77c9414-a26b-4005-ac41-ea198ecce29b",
+});
+var workerId = asyncWorker.reject(
+  {
+    uuid: "49a16e73-6f72-48e2-935a-5c7129fdf8af",
+    promiseUuid: "e77c9414-a26b-4005-ac41-ea198ecce29b",
+  },
+  "rejectData"
+);</code></pre>
 
 
 
@@ -1932,7 +2035,7 @@ var data = await asyncWorker.join('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code
 
             
 
-            <td class="description last">worker에 접근하기 위한 uuid 또는 uuid와 promiseUuid 객체
+            <td class="description last"><p>worker에 접근하기 위한 uuid 또는 uuid와 promiseUuid 객체</p>
                 <h6>Properties</h6>
                 
 
@@ -1974,7 +2077,7 @@ var data = await asyncWorker.join('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code
 
             
 
-            <td class="description last">worker에 접근하기 위한 uuid</td>
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
         </tr>
 
     
@@ -1997,7 +2100,7 @@ var data = await asyncWorker.join('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code
 
             
 
-            <td class="description last">Promise를 반환할 promiseUuid</td>
+            <td class="description last"><p>Promise를 반환할 promiseUuid</p></td>
         </tr>
 
     
@@ -2027,64 +2130,13 @@ var data = await asyncWorker.join('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code
 
             
 
-            <td class="description last">Promise를 reject할 때 전달할 데이터</td>
+            <td class="description last"><p>Promise를 reject할 때 전달할 데이터</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Inswave Systems</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line209">line 209</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
 
@@ -2104,12 +2156,12 @@ var data = await asyncWorker.join('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code
 
         
 <div class="param-desc">
-    resolve된 Promise udid
+    <p>resolve된 Promise udid</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -2125,119 +2177,26 @@ var data = await asyncWorker.join('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code
 
 
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var workerId = asyncWorker.reject('49a16e73-6f72-48e2-935a-5c7129fdf8af');
-var workerId = asyncWorker.reject('49a16e73-6f72-48e2-935a-5c7129fdf8af', 'resolveData');
-var workerId = asyncWorker.reject({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af', promiseUuid: 'e77c9414-a26b-4005-ac41-ea198ecce29b'});
-var workerId = asyncWorker.reject({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af', promiseUuid: 'e77c9414-a26b-4005-ac41-ea198ecce29b'}, 'resolveData');</code></pre>
-
-
-
         
             
 
     
 
-    
     <h4 class="name" id=".rejectAll"><span class="type-signature">(static) </span>rejectAll<span class="signature">(uuid, data)</span><span class="type-signature"></span></h4>
-    
 
     
-
-
-
-<div class="description">
-    worker 내부의 모든 Promise를 reject한다.
-이미 resolve, reject된 Promise는 무시한다.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>uuid</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">worker에 접근하기 위한 uuid</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Promise를 reject할 때 전달할 데이터</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
 
 
 
 
 <dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line315">line 315</a>
+    </li></ul></dd>
+    
 
     
 
@@ -2271,13 +2230,6 @@ var workerId = asyncWorker.reject({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af',
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line284">line 284</a>
-    </li></ul></dd>
-    
-
-    
 
     
 
@@ -2288,11 +2240,10 @@ var workerId = asyncWorker.reject({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af',
 
 
 
-
-
-
-
-
+<div class="description usertext">
+    <p>worker 내부의 모든 Promise를 reject한다.
+이미 resolve, reject된 Promise는 무시한다.</p>
+</div>
 
 
 
@@ -2309,29 +2260,188 @@ var workerId = asyncWorker.rejectAll('49a16e73-6f72-48e2-935a-5c7129fdf8af', 're
 
 
 
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>uuid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Promise를 reject할 때 전달할 데이터</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
             
 
     
 
-    
     <h4 class="name" id=".resolve"><span class="type-signature">(static) </span>resolve<span class="signature">(uuid, data)</span><span class="type-signature"> &rarr; {String}</span></h4>
-    
 
     
 
 
 
-<div class="description">
-    worker 내부의 Promise를 resolve한다.
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line176">line 176</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Inswave Systems</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>worker 내부의 Promise를 resolve한다.
 첫번째 인자가 문자열인 경우 worker에 접근하기 위한 uuid로 사용하고 해당 worker의 마지막 생성된 Promise를 resolve한다.
-첫번째 인자가 객체인 경우 uuid 속성을 worker에 접근하기 위한 uuid로 사용하고 promiseUuid 속성에 지정된 promiseUuid로 저장된 Promise를 resolve한다.
+첫번째 인자가 객체인 경우 uuid 속성을 worker에 접근하기 위한 uuid로 사용하고 promiseUuid 속성에 지정된 promiseUuid로 저장된 Promise를 resolve한다.</p>
 </div>
 
 
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var workerId = asyncWorker.resolve('49a16e73-6f72-48e2-935a-5c7129fdf8af');
+var workerId = asyncWorker.resolve('49a16e73-6f72-48e2-935a-5c7129fdf8af', 'resolveData');
+var workerId = asyncWorker.resolve({
+  uuid: "49a16e73-6f72-48e2-935a-5c7129fdf8af",
+  promiseUuid: "e77c9414-a26b-4005-ac41-ea198ecce29b",
+});
+var workerId = asyncWorker.resolve(
+  {
+    uuid: "49a16e73-6f72-48e2-935a-5c7129fdf8af",
+    promiseUuid: "e77c9414-a26b-4005-ac41-ea198ecce29b",
+  },
+  "resolveData"
+);</code></pre>
 
 
 
@@ -2380,7 +2490,7 @@ var workerId = asyncWorker.rejectAll('49a16e73-6f72-48e2-935a-5c7129fdf8af', 're
 
             
 
-            <td class="description last">worker에 접근하기 위한 uuid 또는 uuid와 promiseUuid 객체
+            <td class="description last"><p>worker에 접근하기 위한 uuid 또는 uuid와 promiseUuid 객체</p>
                 <h6>Properties</h6>
                 
 
@@ -2422,7 +2532,7 @@ var workerId = asyncWorker.rejectAll('49a16e73-6f72-48e2-935a-5c7129fdf8af', 're
 
             
 
-            <td class="description last">worker에 접근하기 위한 uuid</td>
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
         </tr>
 
     
@@ -2445,7 +2555,7 @@ var workerId = asyncWorker.rejectAll('49a16e73-6f72-48e2-935a-5c7129fdf8af', 're
 
             
 
-            <td class="description last">Promise를 반환할 promiseUuid</td>
+            <td class="description last"><p>Promise를 반환할 promiseUuid</p></td>
         </tr>
 
     
@@ -2475,64 +2585,13 @@ var workerId = asyncWorker.rejectAll('49a16e73-6f72-48e2-935a-5c7129fdf8af', 're
 
             
 
-            <td class="description last">Promise를 resolve할 때 전달할 데이터</td>
+            <td class="description last"><p>Promise를 resolve할 때 전달할 데이터</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Inswave Systems</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line154">line 154</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
 
@@ -2552,12 +2611,12 @@ var workerId = asyncWorker.rejectAll('49a16e73-6f72-48e2-935a-5c7129fdf8af', 're
 
         
 <div class="param-desc">
-    resolve된 Promise udid
+    <p>resolve된 Promise udid</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -2573,119 +2632,26 @@ var workerId = asyncWorker.rejectAll('49a16e73-6f72-48e2-935a-5c7129fdf8af', 're
 
 
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var workerId = asyncWorker.resolve('49a16e73-6f72-48e2-935a-5c7129fdf8af');
-var workerId = asyncWorker.resolve('49a16e73-6f72-48e2-935a-5c7129fdf8af', 'resolveData');
-var workerId = asyncWorker.resolve({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af', promiseUuid: 'e77c9414-a26b-4005-ac41-ea198ecce29b'});
-var workerId = asyncWorker.resolve({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af', promiseUuid: 'e77c9414-a26b-4005-ac41-ea198ecce29b'}, 'resolveData');</code></pre>
-
-
-
         
             
 
     
 
-    
     <h4 class="name" id=".resolveAll"><span class="type-signature">(static) </span>resolveAll<span class="signature">(uuid, data)</span><span class="type-signature"></span></h4>
-    
 
     
-
-
-
-<div class="description">
-    worker 내부의 모든 Promise를 resolve한다.
-이미 resolve, reject된 Promise는 무시한다.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>uuid</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">worker에 접근하기 위한 uuid</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Promise를 resolve할 때 전달할 데이터</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
 
 
 
 
 <dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line289">line 289</a>
+    </li></ul></dd>
+    
 
     
 
@@ -2719,13 +2685,6 @@ var workerId = asyncWorker.resolve({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af'
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line258">line 258</a>
-    </li></ul></dd>
-    
-
-    
 
     
 
@@ -2736,11 +2695,10 @@ var workerId = asyncWorker.resolve({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af'
 
 
 
-
-
-
-
-
+<div class="description usertext">
+    <p>worker 내부의 모든 Promise를 resolve한다.
+이미 resolve, reject된 Promise는 무시한다.</p>
+</div>
 
 
 
@@ -2757,28 +2715,180 @@ var workerId = asyncWorker.resolveAll('49a16e73-6f72-48e2-935a-5c7129fdf8af', 'r
 
 
 
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>uuid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Promise를 resolve할 때 전달할 데이터</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
             
 
     
 
-    
     <h4 class="name" id=".stop"><span class="type-signature">(static) </span>stop<span class="signature">(uuid)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-    
 
     
 
 
 
-<div class="description">
-    worker 내부의 모든 Promise를 resolve한다.
-내부의 모든 Promise가 settle(resolve 또는 reject)된 후 settle되는 promise를 반환한다
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="async.js.html">async.js</a>, <a href="async.js.html#line383">line 383</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Inswave Systems</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>worker 내부의 모든 Promise를 resolve한다.
+내부의 모든 Promise가 settle(resolve 또는 reject)된 후 settle되는 promise를 반환한다</p>
 </div>
 
 
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var promose = asyncWorker.stop("49a16e73-6f72-48e2-935a-5c7129fdf8af").then((data) => {
+  data.forEach((item) => {
+    console.log(item);
+  });
+});
+var data = await asyncWorker.stop('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code></pre>
 
 
 
@@ -2824,64 +2934,13 @@ var workerId = asyncWorker.resolveAll('49a16e73-6f72-48e2-935a-5c7129fdf8af', 'r
 
             
 
-            <td class="description last">worker에 접근하기 위한 uuid</td>
+            <td class="description last"><p>worker에 접근하기 위한 uuid</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Inswave Systems</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="async.js.html">async.js</a>, <a href="async.js.html#line340">line 340</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
 
@@ -2901,12 +2960,12 @@ var workerId = asyncWorker.resolveAll('49a16e73-6f72-48e2-935a-5c7129fdf8af', 'r
 
         
 <div class="param-desc">
-    settle되는 Promise로 worker 내부의 Promise의 resolve 값 또는 reject 사유가 포함된 배열을 반환한다.
+    <p>settle되는 Promise로 worker 내부의 Promise의 resolve 값 또는 reject 사유가 포함된 배열을 반환한다.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -2919,14 +2978,6 @@ var workerId = asyncWorker.resolveAll('49a16e73-6f72-48e2-935a-5c7129fdf8af', 'r
 </dl>
 
     
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var promose = asyncWorker.stop('49a16e73-6f72-48e2-935a-5c7129fdf8af').then((data) => { data.forEach((item) => { console.log(item); }); });
-var data = await asyncWorker.stop('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code></pre>
 
 
 
@@ -2943,19 +2994,25 @@ var data = await asyncWorker.stop('49a16e73-6f72-48e2-935a-5c7129fdf8af');</code
 
 
 
+    
+    
 </div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="asyncWorker.html">asyncWorker</a></li></ul>
-</nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Wed May 25 2022 18:36:32 GMT+0900 (대한민국 표준시)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Thu May 26 2022 10:53:44 GMT+0900 (대한민국 표준시) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
 </body>
 </html>
