@@ -70,10 +70,23 @@ var asyncWorker = (function () {
    * @param {Function} callback Promise가 resolve된 경우 then() 함수의 인자로 전달될 callback 함수
    * @return {String} uuid
    * @example
-   * var workerId = asyncWorker.addPromise('49a16e73-6f72-48e2-935a-5c7129fdf8af');
-   * var workerId = asyncWorker.addPromise('49a16e73-6f72-48e2-935a-5c7129fdf8af', () => {console.log('callback')});
-   * var workerId = asyncWorker.addPromise({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af', chainUuid: ['e77c9414-a26b-4005-ac41-ea198ecce29b', 'a9a91d67-1485-4291-b7c6-72bbdc093b63']});
-   * var workerId = asyncWorker.addPromise({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af', chainUuid: ['e77c9414-a26b-4005-ac41-ea198ecce29b', 'a9a91d67-1485-4291-b7c6-72bbdc093b63']}, () => {console.log('callback')});
+   *  var workerId = asyncWorker.addPromise("49a16e73-6f72-48e2-935a-5c7129fdf8af");
+   *  var workerId = asyncWorker.addPromise("49a16e73-6f72-48e2-935a-5c7129fdf8af", () => {
+   *    console.log("callback");
+   *  });
+   *  var workerId = asyncWorker.addPromise({
+   *    uuid: "49a16e73-6f72-48e2-935a-5c7129fdf8af",
+   *    chainUuid: ["e77c9414-a26b-4005-ac41-ea198ecce29b", "a9a91d67-1485-4291-b7c6-72bbdc093b63"],
+   *  });
+   *  var workerId = asyncWorker.addPromise(
+   *    {
+   *      uuid: "49a16e73-6f72-48e2-935a-5c7129fdf8af",
+   *      chainUuid: ["e77c9414-a26b-4005-ac41-ea198ecce29b", "a9a91d67-1485-4291-b7c6-72bbdc093b63"],
+   *    },
+   *    () => {
+   *      console.log("callback");
+   *    }
+   *  );
    */
   let addPromise = function (uuid, callback) {
     let rootuuid, chainUuid;
@@ -148,8 +161,17 @@ var asyncWorker = (function () {
    * @example
    * var workerId = asyncWorker.resolve('49a16e73-6f72-48e2-935a-5c7129fdf8af');
    * var workerId = asyncWorker.resolve('49a16e73-6f72-48e2-935a-5c7129fdf8af', 'resolveData');
-   * var workerId = asyncWorker.resolve({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af', promiseUuid: 'e77c9414-a26b-4005-ac41-ea198ecce29b'});
-   * var workerId = asyncWorker.resolve({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af', promiseUuid: 'e77c9414-a26b-4005-ac41-ea198ecce29b'}, 'resolveData');
+   * var workerId = asyncWorker.resolve({
+   *   uuid: "49a16e73-6f72-48e2-935a-5c7129fdf8af",
+   *   promiseUuid: "e77c9414-a26b-4005-ac41-ea198ecce29b",
+   * });
+   * var workerId = asyncWorker.resolve(
+   *   {
+   *     uuid: "49a16e73-6f72-48e2-935a-5c7129fdf8af",
+   *     promiseUuid: "e77c9414-a26b-4005-ac41-ea198ecce29b",
+   *   },
+   *   "resolveData"
+   * );
    */
   let resolve = function (uuid, data) {
     let uuid1, promiseUuid;
@@ -203,8 +225,17 @@ var asyncWorker = (function () {
    * @example
    * var workerId = asyncWorker.reject('49a16e73-6f72-48e2-935a-5c7129fdf8af');
    * var workerId = asyncWorker.reject('49a16e73-6f72-48e2-935a-5c7129fdf8af', 'resolveData');
-   * var workerId = asyncWorker.reject({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af', promiseUuid: 'e77c9414-a26b-4005-ac41-ea198ecce29b'});
-   * var workerId = asyncWorker.reject({uuid: '49a16e73-6f72-48e2-935a-5c7129fdf8af', promiseUuid: 'e77c9414-a26b-4005-ac41-ea198ecce29b'}, 'resolveData');
+   * var workerId = asyncWorker.reject({
+   *   uuid: "49a16e73-6f72-48e2-935a-5c7129fdf8af",
+   *   promiseUuid: "e77c9414-a26b-4005-ac41-ea198ecce29b",
+   * });
+   * var workerId = asyncWorker.reject(
+   *   {
+   *     uuid: "49a16e73-6f72-48e2-935a-5c7129fdf8af",
+   *     promiseUuid: "e77c9414-a26b-4005-ac41-ea198ecce29b",
+   *   },
+   *   "rejectData"
+   * );
    */
   let reject = function (uuid, data) {
     let uuid1, promiseUuid;
@@ -294,7 +325,11 @@ var asyncWorker = (function () {
       }
     }
   };
-
+  var promose = asyncWorker.join("49a16e73-6f72-48e2-935a-5c7129fdf8af").then((data) => {
+    data.forEach((item) => {
+      console.log(item);
+    });
+  });
   /**
    * worker 내부의 모든 Promise가 settle(resolve 또는 reject)된 후 settle되는 promise를 반환한다.
    *
@@ -303,7 +338,11 @@ var asyncWorker = (function () {
    * @param {String} uuid worker에 접근하기 위한 uuid
    * @return {Promise} settle되는 Promise로 worker 내부의 Promise의 resolve 값 또는 reject 사유가 포함된 배열을 반환한다.
    * @example
-   * var promose = asyncWorker.join('49a16e73-6f72-48e2-935a-5c7129fdf8af').then((data) => { data.forEach((item) => { console.log(item); }); });
+   * var promose = asyncWorker.join("49a16e73-6f72-48e2-935a-5c7129fdf8af").then((data) => {
+   *   data.forEach((item) => {
+   *     console.log(item);
+   *   });
+   * });
    * var data = await asyncWorker.join('49a16e73-6f72-48e2-935a-5c7129fdf8af');
    */
   let join = function (uuid) {
@@ -334,7 +373,11 @@ var asyncWorker = (function () {
    * @param {String} uuid worker에 접근하기 위한 uuid
    * @return {Promise} settle되는 Promise로 worker 내부의 Promise의 resolve 값 또는 reject 사유가 포함된 배열을 반환한다.
    * @example
-   * var promose = asyncWorker.stop('49a16e73-6f72-48e2-935a-5c7129fdf8af').then((data) => { data.forEach((item) => { console.log(item); }); });
+   * var promose = asyncWorker.stop("49a16e73-6f72-48e2-935a-5c7129fdf8af").then((data) => {
+   *   data.forEach((item) => {
+   *     console.log(item);
+   *   });
+   * });
    * var data = await asyncWorker.stop('49a16e73-6f72-48e2-935a-5c7129fdf8af');
    */
   let stop = function (uuid) {
@@ -368,7 +411,9 @@ var asyncWorker = (function () {
    * @param {String} uuid worker에 접근하기 위한 uuid
    * @return {Promise} worker의 상태를 반환하는 Promise로 pending, fulfilled, rejected 중 한가지 값을 반환한다.
    * @example
-   * var promose = asyncWorker.getStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af').then((data) => { console.log(data); });
+   * var promose = asyncWorker.getStatus("49a16e73-6f72-48e2-935a-5c7129fdf8af").then((data) => {
+   *   console.log(data);
+   * });
    * var status = await asyncWorker.getStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af');
    */
   let getStatus = function (uuid) {
@@ -403,7 +448,9 @@ var asyncWorker = (function () {
    * @param {String} uuid worker에 접근하기 위한 uuid
    * @return {Promise} worker의 상태를 반환하는 Promise로 status, detail 속성을 가지며 각 속성은 pending, fulfilled, rejected 중 한가지 값을 가진다.
    * @example
-   * var promose = asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af').then((data) => { console.log(data); });
+   * var promose = asyncWorker.getDetailedStatus("49a16e73-6f72-48e2-935a-5c7129fdf8af").then((data) => {
+   *   console.log(data);
+   * });
    * var status = await asyncWorker.getDetailedStatus('49a16e73-6f72-48e2-935a-5c7129fdf8af');
    */
   let getDetailedStatus = function (uuid) {
