@@ -325,11 +325,7 @@ var asyncWorker = (function () {
       }
     }
   };
-  var promose = asyncWorker.join("49a16e73-6f72-48e2-935a-5c7129fdf8af").then((data) => {
-    data.forEach((item) => {
-      console.log(item);
-    });
-  });
+
   /**
    * worker 내부의 모든 Promise가 settle(resolve 또는 reject)된 후 settle되는 promise를 반환한다.
    *
